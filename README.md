@@ -5,7 +5,7 @@ Templates are designed by:
 * Login       --> Mozhdeh Gheini
 * Register    --> Mozhdeh Gheini
 * BuyHistory  --> Mozhdeh Gheini
-
+* 
 * EventDetails  --> Pardis Pashakhanloo [DONE]
 * BuyTicket     --> Pardis Pashakhanloo
 * Payment       --> Pardis Pashakhanloo
