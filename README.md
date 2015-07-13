@@ -11,4 +11,10 @@ Templates are designed by:
 * Payment       --> Pardis Pashakhanloo
 * ViewEvents    --> Pardis Pashakhanloo
 * AddNewEvent   --> Pardis Pashakhanloo
+* 
+
+Django Models are designed by:
+* to be completed soon...
+* 
+* 
 
