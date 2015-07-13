@@ -12,6 +12,8 @@ Templates are designed by:
 * ViewEvents    --> Pardis Pashakhanloo
 * AddNewEvent   --> Pardis Pashakhanloo
 * 
+* EditAccountCustomer --> none
+* EditAccountEventPlanner --> none
 
 Django Models are designed by:
 * to be completed soon...
