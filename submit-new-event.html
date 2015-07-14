@@ -1,101 +1,153 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ثبت رویداد جدید</title>
-    <link href="static/styles/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="static/styles/bootstrap-rtl.min.css" />
+  <title>ثبت رویداد جدید</title>
+  <link href="styles/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/bootstrap-rtl.min.css" />
+  <link rel="stylesheet" href="styles/skins/aqua/theme.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <!-- Middle part -->
-        <div class="col-md-6 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form method="post" class="form-horizontal">
-                              <fieldset class="flip">
-                              <legend>ثبت رویداد جدید</legend>
-                                <div class="form-group">
-                                  <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                                  <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                              <div class="col-lg-10">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                <div class="checkbox">
-                                  <label>
-                                    <input type="checkbox"> Checkbox
-                                </label>
-                            </div>
-                        </div>
+  <div class="container-fluid">
+    <!-- Middle part -->
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- must start from here -->
+          <div class="row">
+            <div class="col-md-12">
+              <form method="post" class="form-horizontal">
+                <fieldset class="flip">
+                  <legend>ثبت رویداد جدید</legend>
+
+                  <div class="form-group">
+                    <label for="inputTitle" class="col-lg-2 control-label">عنوان</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputTitle" placeholder="مثلا: مسابقه والیبال ایران و آمریکا" />
                     </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="selectCategory" class="col-lg-2 control-label">دسته</label>
+                    <div class="col-lg-4">
+                      <select class="form-control selectCategory">
+                        <option>فیلم</option>
+                        <option>مسابقه ورزشی</option>
+                        <option>تئاتر</option>
+                      </select>
+                    </div>
+
+                    <label for="selectSubCategory" class="col-lg-2 control-label">زیردسته</label>
+                    <div class="col-lg-4 selectSubCategory">
+                      <select class="form-control">
+                        <option>کمدی</option>
+                        <option>اکشن</option>
+                        <option>تراژدیک</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputImage" class="col-lg-2 control-label">انتخاب تصویر</label>
+                    <div class="col-lg-10">
+                      <input type="file" class="form-control" id="inputImage" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="textareaDetails" class="col-lg-2 control-label">جزییات بیشتر</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control textareaDetails" rows="5" placeholder="با افزودن جزییات برای رویدادی که اضافه می‌کنید کاربران را از ابهام نجات می‌دهید."></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputDate" class="col-lg-2 control-label">مهلت خرید</label>
+                    <div class="col-lg-10">
+                      <div class="input-group">
+                        <input id="date_input" type="text" class="form-control" placeholder="آخرین مهلتی را که کاربر می‌تواند اقدام به خرید بلیت کند مشخص کنید." />
+                        <span class="input-group-btn"><button class="btn btn-default" id="date_btn"><span class="glyphicon glyphicon-calendar"></span></button></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div  id="ticketDiv">
                     <div class="form-group">
-                      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                      <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
-                        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                      <label for="inputTicket" class="col-lg-2 control-label">تعیین بلیت‌ها</label>
+                      <div class="col-lg-3">
+                        <input type="text" class="form-control inputTicketType" placeholder="نوع بلیت" />
+                      </div>
+
+                      <div class="col-lg-2">
+                        <input type="text" class="form-control inputTicketPrice" placeholder="قیمت" />
+                      </div>
+
+                      <div class="col-lg-2">
+                        <input type="text" class="form-control inputTicketCapacity" placeholder="ظرفیت" />
+                      </div>
+
+                      <div class="col-lg-2">
+                        <button id="addTicketRow" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                      </div>
                     </div>
+                  </div>
+                  <script>
+                      //var tickets = 0;
+                      var write = document.getElementById('ticketDiv');
+                      function addTicket(e) {
+                        e.preventDefault();
+                        write.innerHTML +=
+                        '<div class="form-group"><label for="inputTicket" class="col-lg-2 control-label"></label><div class="col-lg-3"><input type="text" class="form-control inputTicketType" placeholder="نوع بلیت" /></div>'
+                        + '<div class="col-lg-2"><input type="text" class="form-control inputTicketPrice" placeholder="قیمت" /></div>'
+                        + '<div class="col-lg-2"><input type="text" class="form-control inputTicketCapacity" placeholder="ظرفیت" /></div>'
+                        + '<br />';
+                        document.getElementById('addTicketRow').addEventListener('click', addTicket);                        
+                      //  tickets++;
+                    }
+
+                    document.getElementById('addTicketRow').addEventListener('click', addTicket);
+
+                  </script>
+
                 </div>
+
                 <div class="form-group">
-                  <label class="col-lg-2 control-label">Radios</label>
-                  <div class="col-lg-10">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Option one is this
-                    </label>
+                  <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">ثبت</button>
+                    <button type="reset" class="btn btn-default">انصراف</button>
+                  </div>
                 </div>
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                    Option two can be something else
-                </label>
-            </div>
+
+
+
+              </fieldset>
+            </form>
+          </div>
         </div>
+        <!-- End of movie profile -->
+      </div>
     </div>
-    <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Selects</label>
-      <div class="col-lg-10">
-        <select class="form-control" id="select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-      </select>
-      <br>
-      <select multiple="" class="form-control">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-      </select>
   </div>
-</div>
-<div class="form-group">
-  <div class="col-lg-10 col-lg-offset-2">
-    <button type="reset" class="btn btn-default">Cancel</button>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</div>
-</div>
-</fieldset>
-</form>
-</div>
-</div>
-<!-- End of movie profile -->
-</div>
-</div>
-</div>
-<!-- End of middle part -->
+  <!-- End of middle part -->
 
 </div>
 <!-- End of main template -->
-<script src="/static/scripts/jquery-1.9.1.min.js"></script>
-<script src="/static/scripts/bootstrap.min.js"></script>
+<script type="text/javascript"  src="scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+<script src="scripts/jalali.js"></script>
+<script src="scripts/calendar.js"></script>
+<script src="scripts/calendar-setup.js"></script>
+<script src="scripts/lang/calendar-fa.js"></script>
+<script>
+  Calendar.setup({
+          inputField     :    "date_input",   // id of the input field
+          button         :    "date_btn",   // trigger for the calendar (button ID)
+              ifFormat       :    "%Y-%m-%d %H:%M",       // format of the input field
+              showsTime      :    true,
+              dateType     :  'jalali',
+              timeFormat     :    "24",
+              weekNumbers    : false
+            });
+</script>
 </body>
 </html>
