@@ -5,7 +5,6 @@
   <link rel="stylesheet" href="styles/bootstrap.min.css" />
   <link rel="stylesheet" href="styles/bootstrap-rtl.min.css" />
   <link rel="stylesheet" href="styles/pcustom.css" />
-  <link rel="stylesheet" href="styles/star-rating.min.css" />
 </head>
 <body>
   <div class="container-fluid">
@@ -80,98 +79,100 @@
 
             <div class="row">
               <div class="col-lg-10 col-lg-offset-1">
-                <a href="#" class="btn btn-success btn-block">می‌خواهم بخرم!</a>
+                <a href="#" class="btn btn-success btn-lg btn-block">می‌خواهم بخرم!</a>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-lg-4 col-lg-offset-4 center-block">
-                <h4></h4>
+              <div class="col-lg-8 col-lg-offset-2">
+                <!-- <h4></h4> -->
                 <form role="form" method="GET">
-                <input id="inputRate" class="rating" data-min="0" data-max="5" data-step="1" data-show-clear="false" data-show-caption="false" data-rtl="true" data-size="sm" />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end of panel-body -->
-
-        <hr />
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 text-center">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <h4 style="margin-top: 0">توضیحات تکمیلی</h4>
-                <p>
-                  در این جا یک سری توضیح تکمیلی مینوتیسیم که چیزایی است که برگزارکنده‌ی رویداد قبلا موقعی که می‌خواسته رویداد را ثبت کنه وارد کرده.
-                  حواسمان باشد که اگر کللن اینجا خالی بود، نگذاریمش
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="panel panel-default" style="border: none">
-              <div class="panel-body" style="padding-top: 0">
-                <h3 style="margin: 0">نظرات کاربران</h3>
-                <div>
-                  <ul class="comments-list">
-                    <!--Comments go here!-->
-
-                    <!-- start of each comment -->
-                    <li class="comment">
-                      <div class="comment-body">
-                        <div class="comment-heading">
-                          <a href="#"><h4 class="user"> پردیس پاشاخانلو </h4></a>
-                          <h5 class="time"> ارسال شده در ۲۵ آبان ۹۳ ساعت ۱۵:۳۰ </h5>
-                        </div>
-                        <p> این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. </p>
-                      </div>
-                    </li>
-                    <hr />
-                    <!-- end of each comment -->
-
-                    <!-- start of each comment -->
-                    <li class="comment">
-                      <div class="comment-body">
-                        <div class="comment-heading">
-                          <a href="#"><h4 class="user"> پردیس پاشاخانلو </h4></a>
-                          <h5 class="time"> ارسال شده در ۲۵ آبان ۹۳ ساعت ۱۵:۳۰ </h5>
-                        </div>
-                        <p> این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. </p>
-                      </div>
-                    </li>
-                    <!-- end of each comment -->
-
-                  </ul>
+                  <div style="margin: 10px" class="row lead  center-block">
+                    <h4><span style="margin: 20px">امتیاز دهید:</span><div id="stars" class="starrr"></div><h4>
+                      <!-- You gave a rating of <span id="count">0</span> star(s) -->
+                    </div>
+                  </form>
                 </div>
-                <form method="GET" action="">
-                  <div class="input-group">
-                    <input type="text" id="comment-text" class="form-control" placeholder="نظر شما چیست؟" />
-                    <span class="input-group-btn"><button type="submit" class="add-comment btn btn-default" data-id="{{ template_post.post.id }}"><span class="glyphicon glyphicon-comment"></span></button></span>
-                  </div>
-                </form>
+              </div>
+            </div>
+          </div> <!-- end of panel-body -->
+
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <h4 style="margin-top: 0">توضیحات تکمیلی</h4>
+                  <p>
+                    در این جا یک سری توضیح تکمیلی مینوتیسیم که چیزایی است که برگزارکنده‌ی رویداد قبلا موقعی که می‌خواسته رویداد را ثبت کنه وارد کرده.
+                    حواسمان باشد که اگر کللن اینجا خالی بود، نگذاریمش
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div> <!-- end of panel panel-default -->
-      <!-- end of view-event-details -->
-    </div> <!-- end of col-md-6 col-md-offset-3 -->
-  </div> <!-- end of container-fluid -->
-</div>
-<!-- End of middle part -->
+
+          <hr />
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="panel panel-default" style="border: none">
+                <div class="panel-body" style="padding-top: 0">
+                  <h3 style="margin: 0">نظرات کاربران</h3>
+                  <div>
+                    <ul class="comments-list">
+                      <!--Comments go here!-->
+
+                      <!-- start of each comment -->
+                      <li class="comment">
+                        <div class="comment-body">
+                          <div class="comment-heading">
+                            <a href="#"><h4 class="user"> پردیس پاشاخانلو </h4></a>
+                            <h5 class="time"> ارسال شده در ۲۵ آبان ۹۳ ساعت ۱۵:۳۰ </h5>
+                          </div>
+                          <p> این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. </p>
+                        </div>
+                      </li>
+                      <hr />
+                      <!-- end of each comment -->
+
+                      <!-- start of each comment -->
+                      <li class="comment">
+                        <div class="comment-body">
+                          <div class="comment-heading">
+                            <a href="#"><h4 class="user"> پردیس پاشاخانلو </h4></a>
+                            <h5 class="time"> ارسال شده در ۲۵ آبان ۹۳ ساعت ۱۵:۳۰ </h5>
+                          </div>
+                          <p> این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. این جا کامنت من نوشته می‌شود. </p>
+                        </div>
+                      </li>
+                      <!-- end of each comment -->
+
+                    </ul>
+                  </div>
+                  <form method="GET" action="">
+                    <div class="input-group">
+                      <input type="text" id="comment-text" class="form-control" placeholder="نظر شما چیست؟" />
+                      <span class="input-group-btn"><button type="submit" class="add-comment btn btn-default" data-id="{{ template_post.post.id }}"><span class="glyphicon glyphicon-comment"></span></button></span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- end of panel panel-default -->
+        <!-- end of view-event-details -->
+      </div> <!-- end of col-md-6 col-md-offset-3 -->
+    </div> <!-- end of container-fluid -->
+  </div>
+  <!-- End of middle part -->
 
 </div>
 <!-- End of main template -->
 <script type="text/javascript"  src="scripts/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-<script type="text/javascript" src="scripts/star-rating.min.js"></script>
 <script type="text/javascript" src="scripts/pcustom.js"></script>
+<script type="text/javascript" src="scripts/star-rating.js"></script>
 <script type="text/javascript">
-
   buttons = document.getElementsByClassName("add-comment");
   for(var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function(event) {
