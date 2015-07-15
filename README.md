@@ -9,7 +9,7 @@ Templates are designed by:
 * EventDetails  --> Pardis Pashakhanloo [DONE]
 * BuyTicket     --> Pardis Pashakhanloo
 * Payment       --> Pardis Pashakhanloo
-* ViewEvents    --> Pardis Pashakhanloo
+* ViewEvents    --> Pardis Pashakhanloo [DONE]
 * AddNewEvent   --> Pardis Pashakhanloo [DONE]
 * 
 * EditAccountCustomer --> none
