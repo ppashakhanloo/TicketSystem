@@ -56,6 +56,13 @@
                   </div>
 
                   <div class="form-group">
+                    <label for="inputPlace" class="col-lg-2 control-label">محل برگزاری</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputPlace" placeholder="مثلا: سالن میلاد نمایشگاه" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <label for="textareaDetails" class="col-lg-2 control-label">جزییات بیشتر</label>
                     <div class="col-lg-10">
                       <textarea class="form-control textareaDetails" rows="5" placeholder="با افزودن جزییات برای رویدادی که اضافه می‌کنید کاربران را از ابهام نجات می‌دهید."></textarea>
@@ -66,8 +73,18 @@
                     <label for="inputDate" class="col-lg-2 control-label">مهلت خرید</label>
                     <div class="col-lg-10">
                       <div class="input-group">
-                        <input id="date_input" type="text" class="form-control" placeholder="آخرین مهلتی را که کاربر می‌تواند اقدام به خرید بلیت کند مشخص کنید." />
-                        <span class="input-group-btn"><button class="btn btn-default" id="date_btn"><span class="glyphicon glyphicon-calendar"></span></button></span>
+                        <input id="date_input" type="text" class="form-control" placeholder="آخرین مهلتی را که کاربر می‌تواند اقدام به خرید بلیت کند مشخص کنید." style="z-index: 1; position: absolute" />
+                        <span class="input-group-btn" style="z-index: 1;"><button class="btn btn-default" id="date_btn"><span class="glyphicon glyphicon-calendar"></span></button></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputDateOccur" class="col-lg-2 control-label">زمان برگزاری</label>
+                    <div class="col-lg-10">
+                      <div class="input-group">
+                        <input id="date_input_2" type="text" class="form-control" placeholder="زمان برگزاری رویداد را مشخص فرمایید."  style="z-index: 1;"/>
+                        <span class="input-group-btn" ><button class="btn btn-default" id="date_btn_2"><span class="glyphicon glyphicon-calendar"></span></button></span>
                       </div>
                     </div>
                   </div>
@@ -82,7 +99,7 @@
                       <div class="col-lg-3">
                         <div class="input-group">
                           <input type="text" class="form-control inputTicketPrice" placeholder="قیمت" />
-                          <span class="input-group-addon">تومان</span>
+                          <span class="input-group-addon" style="color: #D6E0EA"><span class="text-primary">تومان</span></span>
                         </div>
                       </div>
 
@@ -102,7 +119,7 @@
                         e.preventDefault();
                         write.innerHTML +=
                         '<div class="form-group"><label for="inputTicket" class="col-lg-2 control-label"></label><div class="col-lg-3"><input type="text" class="form-control inputTicketType" placeholder="نوع بلیت" /></div>'
-                        + '<div class="col-lg-3"><div class="input-group"><input type="text" class="form-control inputTicketPrice" placeholder="قیمت" /><span class="input-group-addon">تومان</span></div></div>'
+                        + '<div class="col-lg-3"><div class="input-group"><input type="text" class="form-control inputTicketPrice" placeholder="قیمت" /><span class="input-group-addon" style="color: #D6E0EA"><span class="text-primary">تومان</span></span></div></div>'
                         + '<div class="col-lg-2"><input type="text" class="form-control inputTicketCapacity" placeholder="ظرفیت" /></div>'
                         + '<br />';
                         document.getElementById('addTicketRow').addEventListener('click', addTicket);                        
@@ -143,6 +160,16 @@
   Calendar.setup({
           inputField     :    "date_input",   // id of the input field
           button         :    "date_btn",   // trigger for the calendar (button ID)
+              ifFormat       :    "%Y-%m-%d %H:%M",       // format of the input field
+              showsTime      :    true,
+              dateType     :  'jalali',
+              timeFormat     :    "24",
+              weekNumbers    : false
+            });
+
+  Calendar.setup({
+          inputField     :    "date_input_2",   // id of the input field
+          button         :    "date_btn_2",   // trigger for the calendar (button ID)
               ifFormat       :    "%Y-%m-%d %H:%M",       // format of the input field
               showsTime      :    true,
               dateType     :  'jalali',
