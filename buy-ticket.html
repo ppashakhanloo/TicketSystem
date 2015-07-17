@@ -63,18 +63,18 @@
 
                     <tr>
                       <td style="vertical-align: middle; cursor: pointer">
-                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type">
+                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type" id="radio1">
                       </td>
                       <td class="radio-type"  style="vertical-align: middle;">
                         <div class="row form-group center">  
                           <div class="col-md-4 col-sm-3 col-xs-3" style="top: 3px">
-                            <h4>گرون</h4>
+                            <h4 id="type1">گرون</h4>
                           </div>
                           <div class="col-md-4 col-sm-4 col-xs-4" style="top: 3px">
-                            <h4>۶۰۰۰۰ تومان</h4>
+                            <h4 id="price1">60000 تومان</h4>
                           </div>
                           <div class="col-md-4 col-sm-5 col-xs-5" style="top: 4px">
-                            <h4><input type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
+                            <h4><input id="num1" type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
                           </div>
                         </div>
                       </td>
@@ -82,18 +82,18 @@
 
                     <tr>
                       <td style="vertical-align: middle; cursor: pointer">
-                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type">
+                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type" id="radio2">
                       </td>
                       <td class="radio-type"  style="vertical-align: middle;">
                         <div class="row form-group center">  
                           <div class="col-md-4 col-sm-3 col-xs-3" style="top: 3px">
-                            <h4>متوسط</h4>
+                            <h4 id="type2">متوسط</h4>
                           </div>
                           <div class="col-md-4 col-sm-4 col-xs-4" style="top: 3px">
-                            <h4>۴۵۰۰۰ تومان</h4>
+                            <h4 id="price2">45000 تومان</h4>
                           </div>
                           <div class="col-md-4 col-sm-3 col-xs-4" style="top: 4px">
-                            <h4><input type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
+                            <h4><input id="num2" type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
                           </div>
                         </div>
                       </td>
@@ -101,18 +101,18 @@
 
                     <tr>
                       <td style="vertical-align: middle; cursor: pointer">
-                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type">
+                        <input type="radio" class="radio" style="display: inline; cursor: pointer" name="type" id="radio3">
                       </td>
                       <td class="radio-type"  style="vertical-align: middle;">
                         <div class="row form-group center">  
                           <div class="col-md-4 col-sm-3 col-xs-3" style="top: 3px">
-                            <h4>متوسط</h4>
+                            <h4 id="type3">ارزون</h4>
                           </div>
                           <div class="col-md-4 col-sm-4 col-xs-4" style="top: 3px">
-                            <h4>۴۵۰۰۰ تومان</h4>
+                            <h4 id="price3">30000 تومان</h4>
                           </div>
                           <div class="col-md-4 col-sm-3 col-xs-4" style="top: 4px">
-                            <h4><input type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
+                            <h4><input id="num3" type="text" class="form-control input-sm" value="0" style="position: relative; top: -5px; width: 40px" maxlength="2" size="2" /></h4>
                           </div>
                         </div>
                       </td>
@@ -120,8 +120,11 @@
 
                   </tbody>
                 </table>
-                
               </form>
+
+              <div id="error-msg1" class="alert alert-dismissible alert-danger" style="visibility: hidden;">
+                لطفا یکی از بلیت‌ها را انتخاب کنید.
+              </div>
 
               <button id="activate-step-2" class="btn btn-info btn-md center">تایید</button>
             </div>
@@ -146,26 +149,8 @@
                   </tr>
                 </thead>
 
-                <tbody>
-                  <tr>
-                    <td>بلیت ارزون</td>
-                    <td>برج میلاد</td>
-                    <td>۲۱ آبان ۹۴</td>
-                    <td>۱۸:۳۰</td>
-                    <td>۲۳</td>
-                    <td>۳۰۰۰۰</td>
-                  </tr>
-
-                  <tr>
-                    <td>بلیت متوسط</td>
-                    <td>برج میلاد</td>
-                    <td>۲۱ آبان ۹۴</td>
-                    <td>۱۸:۳۰</td>
-                    <td>۲۴</td>
-                    <td>۶۰۰۰۰</td>
-                  </tr>
-
-                  <tr>
+                <tbody id="factorBody">
+<!--                   <tr>
                     <td>بلیت متوسط</td>
                     <td>برج میلاد</td>
                     <td>۲۱ آبان ۹۴</td>
@@ -173,11 +158,11 @@
                     <td>۲۵</td>
                     <td>۶۰۰۰۰</td>
                   </tr>
-
-                  <tr>
+                -->
+<!--                   <tr>
                     <td colspan="20" style="text-align: left">مبلغ کل : <span id="totalPrice">۴۵۰۰۰</span> تومان
                     </td>
-                  </tr>
+                  </tr> -->
                 </tbody>
 
               </table>
@@ -194,31 +179,35 @@
 
         <div class="row setup-content" id="step-3">
           <div class="col-md-12">
-            <div class="col-md-12 well text-center"  style="background-color: #F2F6F7">
+            <div class="col-md-12 well text-center" style="background-color: #F2F6F7">
               <!-- <h1 class="text-center">گام سوم</h1> -->
 
               <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputCardNum" class="col-md-2 col-md-offset-2 control-label">شماره کارت</label>
-                    <div class="col-md-6">
-                      <input type="text" class="form-control" id="inputCardNum" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16" />
-                    </div>
+                <div class="form-group">
+                  <label for="inputCardNum" class="col-md-2 col-md-offset-2 control-label">شماره کارت</label>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="inputCardNum" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="19" />
                   </div>
+                </div>
 
-                  <div class="form-group">
-                    <label for="inputCardPassword" class="col-md-2 col-md-offset-2 control-label">رمز کارت</label>
-                    <div class="col-md-2">
-                      <input type="password" class="form-control" id="inputCardPassword" placeholder="****" maxlength="4" />
-                    </div>
-                    <label for="inputCardPassword" class="col-md-2 control-label">CVV2</label>
-                    <div class="col-md-2">
-                      <input type="password" class="form-control" id="inputCardPassword" placeholder="***" maxlength="3" />
-                    </div>
+                <div class="form-group">
+                  <label for="inputCardPassword" class="col-md-2 col-md-offset-2 control-label">رمز کارت</label>
+                  <div class="col-md-2">
+                    <input type="password" class="form-control" id="inputCardPassword" placeholder="****" maxlength="4" />
                   </div>
+                  <label for="inputCardPassword" class="col-md-2 control-label">CVV2</label>
+                  <div class="col-md-2">
+                    <input type="password" class="form-control" id="inputCardCVV2" placeholder="***" maxlength="3" />
+                  </div>
+                </div>
 
-                    <button type="submit" class="btn btn-default btn-md edit-step-1 col-md-3 col-md-offset-1" style="margin-left: 5px">ویرایش خرید</button>
-                    <a href="view-receipt.html" class="btn btn-success btn-md col-md-6" role="button">پرداخت<span class="badge" style="margin-right: 6px;">۶۰۰۰۰ تومان</a></button>
-
+                <div class="form-group">
+                  <button type="submit" class="btn btn-default btn-md edit-step-1 col-md-3 col-md-offset-1" style="margin-left: 5px">ویرایش خرید</button>
+                  <button id="approvePay" class="btn btn-success btn-md col-md-6" role="button">پرداخت<span id="acceptedTotalPrice" class="badge" style="margin-right: 6px;"> </span> تومان </button>
+                </div>
+                <div id="error-msg2" class="alert alert-dismissible alert-danger" style="visibility: hidden;">
+                  مشخصات کارت نادرست وارد شده است.
+                </div>
               </form>
 
               

@@ -46,36 +46,28 @@
                   </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="factorBody">
+                  <script type="text/javascript">
+
+                  </script>
                   <tr>
-                    <td>بلیت ارزون</td>
+                    <td>ارزون</td>
                     <td>برج میلاد</td>
                     <td>۲۱ آبان ۹۴</td>
                     <td>۱۸:۳۰</td>
                     <td>۲۳</td>
                     <td>۳۰۰۰۰</td>
                   </tr>
-
                   <tr>
-                    <td>بلیت متوسط</td>
+                    <td>ارزون</td>
                     <td>برج میلاد</td>
                     <td>۲۱ آبان ۹۴</td>
                     <td>۱۸:۳۰</td>
                     <td>۲۴</td>
-                    <td>۶۰۰۰۰</td>
+                    <td>۳۰۰۰۰</td>
                   </tr>
-
                   <tr>
-                    <td>بلیت متوسط</td>
-                    <td>برج میلاد</td>
-                    <td>۲۱ آبان ۹۴</td>
-                    <td>۱۸:۳۰</td>
-                    <td>۲۵</td>
-                    <td>۶۰۰۰۰</td>
-                  </tr>
-
-                  <tr>
-                    <td colspan="20" style="text-align: left">مبلغ کل : <span id="totalPrice">۴۵۰۰۰</span> تومان
+                    <td colspan="20" style="text-align: left">مبلغ کل : <span id="totalPrice">۶۰۰۰۰</span> تومان
                     </td>
                   </tr>
                 </tbody>
@@ -83,18 +75,18 @@
               </table>
               <!-- END OF SOORAT HESAB -->
 
-          <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-center">
-              <button class="btn btn-default btn-block btn-lg btn-info hidden-print" id="printButton">پرینت بلیت‌ها</button>
-            </div>
-          </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                  <button class="btn btn-default btn-block btn-lg btn-info hidden-print" id="printButton">پرینت بلیت‌ها</button>
+                </div>
+              </div>
 
 
-          <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-center">
-              <p class="visible-print">در این بخش توضیحات تکمیلی و جزییات نوشته می‌شود.</p>
-            </div>
-          </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                  <p class="visible-print">در این بخش توضیحات تکمیلی و جزییات نوشته می‌شود.</p>
+                </div>
+              </div>
 
 
             </div>
@@ -112,12 +104,12 @@
   <!-- End of main template -->
   <script type="text/javascript"  src="scripts/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-  <script type="text/javascript" src="scripts/pcustom.js"></script>
   <script type="text/javascript">
-  $('#printButton').on('click', function(e) {
-    e.preventDefault();
-    window.print();
-  });
+    $('#printButton').on('click', function(e) {
+      e.preventDefault();
+      window.print();
+    });
   </script>
+  <script type="text/javascript" src="script/pproto-generate-receipt.js"></script>
 </body>
 </html>
