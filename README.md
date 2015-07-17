@@ -7,10 +7,11 @@ Templates are designed by:
 * BuyHistory  --> Mozhdeh Gheini
 * 
 * EventDetails  --> Pardis Pashakhanloo [DONE]
-* BuyTicket     --> Pardis Pashakhanloo
-* Payment       --> Pardis Pashakhanloo
+* BuyTicket     --> Pardis Pashakhanloo [DONE]
+* Payment       --> Pardis Pashakhanloo [DONE]
 * ViewEvents    --> Pardis Pashakhanloo [DONE]
 * AddNewEvent   --> Pardis Pashakhanloo [DONE]
+* PrintTicket	--> Pardis Pashakhanloo [DONE]
 * 
 * EditAccountCustomer --> none
 * EditAccountEventPlanner --> none
